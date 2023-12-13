@@ -1,7 +1,9 @@
 # TPNET8
 
 dotnet --version version
+
 dotnet --list-sdks SDK dl
+
 dotnet new mvc projet MVC
 
 sqlite
