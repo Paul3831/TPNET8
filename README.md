@@ -18,3 +18,7 @@ Microsoft.EntityFrameworkCore 8.0.0
 DTO : Un objet de transfert de données (DTO, Data Transfer Object) est un objet qui transporte des données entre des processus.
 
 AutoMapper : https://www.nuget.org/packages/AutoMapper
+
+Le modele ModelState permet de valider les donnees envoyees par le client
+
+
