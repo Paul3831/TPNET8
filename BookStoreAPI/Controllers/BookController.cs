@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using BookStoreAPI.Entities;
+using BookStoreAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,24 +23,31 @@ public class BookController : ControllerBase
 {
 
     private readonly ApplicationDbContext _dbContext;
+    private readonly IMapper _mapper;
 
-    public BookController(ApplicationDbContext dbContext)
+    public BookController(ApplicationDbContext dbContext, IMapper mapper)
     {
         _dbContext = dbContext;
+        _mapper = mapper;
     }
+
 
     // Ceci est une annotation, elle permet de définir des métadonnées sur une méthode
     // ActionResult designe le type de retour de la méthode de controller d'api
     [HttpGet]
-    public ActionResult<List<Book>> GetBooks()
+    public async Task<ActionResult<List<BookDto>>> GetBooks()
     {
+        var books = await _dbContext.Books.ToListAsync();
 
-        var books = new List<Book>
+        var booksDto = new List<BookDto>();
+
+        foreach (var book in books)
         {
-            new() { Id = 1, Title = "Le seigneur des anneaux", Author = "J.R.R Tolkien" }
-        };
+            booksDto.Add(_mapper.Map<BookDto>(book));
+        }
 
-        return Ok(books);
+
+        return Ok(booksDto);
 
     }
     // POST: api/Book
@@ -70,4 +79,49 @@ public class BookController : ControllerBase
 
         }
     }
+
+    // TODO: Add PUT and DELETE methods
+    // PUT: api/Book/5
+    // BODY: Book (JSON)
+    [HttpPut("{id}")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(404)]
+    public async Task<ActionResult<Book>> PutBook(int id, [FromBody] Book book)
+    {
+        if (id != book.Id)
+        {
+            return BadRequest();
+        }
+        var bookToUpdate = await _dbContext.Books.FirstOrDefaultAsync(b => b.Id == id);
+
+        if (bookToUpdate == null)
+        {
+            return NotFound();
+        }
+
+        bookToUpdate.Author = book.Author;
+        // continuez pour les autres propriétés
+
+        _dbContext.Entry(bookToUpdate).State = EntityState.Modified;
+        await _dbContext.SaveChangesAsync();
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<Book>> DeleteBook(int id)
+    {
+        var bookToDelete = await _dbContext.Books.FindAsync(id);
+        // var bookToDelete = await _dbContext.Books.FirstOrDefaultAsync(b => b.Id == id);
+
+        if (bookToDelete == null)
+        {
+            return NotFound();
+        }
+
+        _dbContext.Books.Remove(bookToDelete);
+        await _dbContext.SaveChangesAsync();
+        return NoContent();
+    }
+
 }
