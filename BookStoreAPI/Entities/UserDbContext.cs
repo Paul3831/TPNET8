@@ -10,6 +10,4 @@ public class UserDbContext : IdentityDbContext<IdentityUser>
     {
 
     }
-
-
 }

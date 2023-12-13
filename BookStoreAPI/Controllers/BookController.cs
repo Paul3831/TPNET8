@@ -55,6 +55,7 @@ public class BookController : ControllerBase
     // POST: api/Book
     // BODY: Book (JSON)
     [Authorize]
+    //[AllowAnonymous] // permet de ne pas avoir besoin d'être authentifié pour accéder à la méthode
     [HttpPost]
     [ProducesResponseType(201, Type = typeof(Book))]
     [ProducesResponseType(400)]
