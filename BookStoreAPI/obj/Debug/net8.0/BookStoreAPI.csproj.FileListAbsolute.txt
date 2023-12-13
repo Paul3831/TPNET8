@@ -126,3 +126,5 @@ C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\obj\Debug\net8.0\ref
 C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\obj\Debug\net8.0\BookStoreAPI.pdb
 C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\obj\Debug\net8.0\BookStoreAPI.genruntimeconfig.cache
 C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\obj\Debug\net8.0\ref\BookStoreAPI.dll
+C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
