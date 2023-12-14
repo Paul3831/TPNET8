@@ -128,3 +128,7 @@ C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\obj\Debug\net8.0\Boo
 C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\obj\Debug\net8.0\ref\BookStoreAPI.dll
 C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\bin\Debug\net8.0\Scrutor.dll
+C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\pmoul\OneDrive\Bureau\TPNET8\projects\BookStoreAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
