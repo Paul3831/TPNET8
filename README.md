@@ -22,3 +22,5 @@ AutoMapper : https://www.nuget.org/packages/AutoMapper
 Le modele ModelState permet de valider les donnees envoyees par le client
 
 
+Authorization et Authentication avec asp .net core Identity
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
