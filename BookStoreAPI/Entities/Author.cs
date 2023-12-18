@@ -11,7 +11,7 @@ namespace BookStoreAPI.Entities
 
         public Author()
         {
-            Name = ""; // Initialisation de Name dans le constructeur
+            Name = "";
         }
 
 
